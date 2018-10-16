@@ -3,6 +3,7 @@
     <div>总价合计：{{totalPrice}}</div>
     <Apple></Apple>
     <Banana></Banana>
+    <button @click="testUrl">testUrl</button>
   </div>
 </template>
 
@@ -13,6 +14,11 @@
   export default {
     components: {Apple, Banana},
     name: "SetStating",
+    methods:{
+      testUrl(){
+        this.$router.push({path: '/Login'})
+      }
+    },
     computed: {
       totalPrice() {
         return this.$store.state.totalPrice

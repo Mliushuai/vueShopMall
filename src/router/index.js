@@ -6,6 +6,7 @@ import setstate from '@/components/page/SetStating'
 import fontend from '@/components/page/FontEnd'
 import changPage from '@/components/page/changPage/changPage'
 import router from '@/common/data/data'
+import Login from '@/components/Login/Login'
 
 Vue.use(VueRouter)
 
@@ -27,7 +28,11 @@ export default new VueRouter({
       path: '/aboutus',
       component: aboutus,
       name: 'aboutus',
-      class: 'fa-table'
+      class: 'fa-table',
+      meta: {
+        //meta元素
+        requireAuth: true,
+      },
     },
     {
       path: '/setstate',
